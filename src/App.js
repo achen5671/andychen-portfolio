@@ -6,7 +6,11 @@ import './App.css';
 import { FiGithub } from 'react-icons/fi';
 import {RiLinkedinLine, RiDiscordLine, RiInstagramLine, RiSpotifyLine} from 'react-icons/ri'
 
+import { useInView } from 'react-intersection-observer';
+
 function App() {
+  const { ref: myRef, inView: myElementIsVisible } = useInView();
+  console.log(myRef)
   return (
     <div className="App">
       {/* TODO: Rename class name */}
@@ -29,10 +33,10 @@ function App() {
         </div>
       </header>
 
-      <div className='about-me'>
-        <h1 className='right-parallax'>ABOUT ME</h1>
-        <p>Junior  Engineer with a passion for design and manifesting ideas into reality!</p>
-      </div>
+      <section id='about-me'>
+        <h1 ref={myRef} className='about-me-title'><span className={`about-me-text ${(myElementIsVisible ? 'animateAboutMe' : '')}`}>ABOUT ME</span></h1>
+        <p className='about-me-desc'>Junior  Engineer with a passion for design and manifesting ideas into reality!</p>
+      </section>
     </div>
   );
 }

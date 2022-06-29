@@ -78,7 +78,76 @@ li {
   letter-spacing: -0.017em;
   color: #000000;
   margin: 0;
-  animation: slide-in 3s
+  animation: slide-in 3s;
 }
 
 /* Header End */
+
+/* About me */
+/* TODO: Increase height to take up whole screen */
+#about-me {
+  height: 40vh;
+  width: 100%;
+  position: relative;
+  /* overflow: hidden; */
+}
+
+.about-me-title {
+  position: absolute;
+  width: 100%;
+  height: 136px;
+  right: 102px;
+  /* top: 355px; */
+  margin:auto;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 200px;
+  line-height: 155px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.017em;
+
+  color: rgba(0, 0, 0, 0.1);
+}
+
+.about-me-text {
+  display: inline-block;
+}
+.about-me-desc {
+  /* Junior Engineer with a passion for design and manifesting ideas into reality ! */
+  /* position: absolute; */
+  width: 662px;
+  height: 88px;
+  margin-left: 30%;
+  top: 379px;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 44px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.017em;
+
+  color: #000000;
+}
+
+/* TODO: This is going to be used my multiple component. Name of class WILL be changed */
+.animateAboutMe {
+  animation: animate-about-me 3s;
+  animation-fill-mode: forwards;
+
+
+}
+
+/* TODO: animate slide on scroll and base on where you are on the page. */
+@keyframes animate-about-me {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+      transform: translateX(300px);
+  }
+}
