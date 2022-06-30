@@ -1,4 +1,5 @@
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 // We are using react-icons, is fontawesome a better alternative?
 // These icons are not the same as the one in the design
@@ -7,10 +8,10 @@ import { FiGithub } from 'react-icons/fi';
 import {RiLinkedinLine, RiDiscordLine, RiInstagramLine, RiSpotifyLine} from 'react-icons/ri'
 
 import { useInView } from 'react-intersection-observer';
+import Skills from './Skills';
 
 function App() {
   const { ref: myRef, inView: myElementIsVisible } = useInView();
-  console.log(myRef)
   return (
     <div className="App">
       {/* TODO: Rename class name */}
@@ -37,6 +38,8 @@ function App() {
         <h1 ref={myRef} className='about-me-title'><span className={`about-me-text ${(myElementIsVisible ? 'animateAboutMe' : '')}`}>ABOUT ME</span></h1>
         <p className='about-me-desc'>Junior  Engineer with a passion for design and manifesting ideas into reality!</p>
       </section>
+
+      <Skills />
     </div>
   );
 }
