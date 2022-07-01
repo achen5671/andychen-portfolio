@@ -5,9 +5,13 @@ import './App.css';
 // TODO: Choose the right fonts
 import { FiGithub } from 'react-icons/fi';
 import {RiLinkedinLine, RiDiscordLine, RiInstagramLine, RiSpotifyLine} from 'react-icons/ri'
+
+import { useInView } from 'react-intersection-observer';
 import { useLayoutEffect, useState } from 'react';
 
 function App() {
+  // Track window / dimension changes
+  //    This is used to hide components when screen gets too small
   const [dimensions, setDimensions] = useState({
     height: window.innerHeight,
     width: window.innerWidth
@@ -24,9 +28,14 @@ function App() {
     window.addEventListener('resize', handleResize)
   })
 
+  // Handles animation depending on scroll position.
+  const { ref: myRef, inView: myElementIsVisible } = useInView();
+  
   return (
     <div className="App">
       {/* TODO: Rename class name */}
+      {/* TODO: Move to it's own componenet that accepts a `title` and `desc` prop */}
+      {/* Header */}
       <header className="App-header">
         <div className='hide_overflow'>
           <h3 className='name'>Andy Chen</h3>
@@ -43,6 +52,11 @@ function App() {
           </ul>
         </div>: ''}
       </header>
+
+      <section id='about-me'>
+        <h1 ref={myRef} className='about-me-title'><span className={`about-me-text ${(myElementIsVisible ? 'animateAboutMe' : '')}`}>ABOUT ME</span></h1>
+        <p className='about-me-desc'>Junior  Engineer with a passion for design and manifesting ideas into reality!</p>
+      </section>
     </div>
   );
 }
