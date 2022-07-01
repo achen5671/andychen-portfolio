@@ -7,13 +7,6 @@
   text-align: center;
 }
 
-/* Look into @media */
-/* @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-} */
-
 /* Header */
 .App-header {
   background-color: #ffffff;
@@ -81,6 +74,30 @@ li {
   animation: slide-in 3s;
 }
 
+@keyframes spin-icon{
+  100%{
+    transform:rotate(360deg);
+  }
+}
+
+.media-icon {
+  transition: background-color 0.5s ease;
+}
+
+.media-icon:hover {
+  background-color: black;
+  color: white;
+  animation: spin-icon 0.5s linear;
+
+  padding: 2px;
+  border-radius: 100%;
+}
+
+.medias a {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* Header End */
 
 /* About me */
@@ -114,6 +131,7 @@ li {
 .about-me-text {
   display: inline-block;
 }
+
 .about-me-desc {
   /* Junior Engineer with a passion for design and manifesting ideas into reality ! */
   /* position: absolute; */
