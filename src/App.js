@@ -7,10 +7,30 @@ import { FiGithub } from 'react-icons/fi';
 import {RiLinkedinLine, RiDiscordLine, RiInstagramLine, RiSpotifyLine} from 'react-icons/ri'
 
 import { useInView } from 'react-intersection-observer';
+import { useLayoutEffect, useState } from 'react';
 
 function App() {
+  // Track window / dimension changes
+  //    This is used to hide components when screen gets too small
+  const [dimensions, setDimensions] = useState({
+    height: window.innerHeight,
+    width: window.innerWidth
+  })
+
+  useLayoutEffect(() => {
+    function handleResize() {
+      setDimensions({
+        height: window.innerHeight,
+        width: window.innerWidth
+      })
+
+    }
+    window.addEventListener('resize', handleResize)
+  })
+
+  // Handles animation depending on scroll position.
   const { ref: myRef, inView: myElementIsVisible } = useInView();
-  console.log(myRef)
+  
   return (
     <div className="App">
       {/* TODO: Rename class name */}
@@ -22,15 +42,15 @@ function App() {
           <p className='desc'>Full Stack Developer & UI / UX Designer</p>
         </div>
 
-        <div className='medias'>
+        {dimensions.width >= 900 ? <div className='medias'>
           <ul className='media-list'>
-            <li><FiGithub/></li>
-            <li><RiLinkedinLine/></li>
-            <li><RiDiscordLine/></li>
-            <li><RiInstagramLine/></li>
-            <li><RiSpotifyLine/></li>
+            <li><a href='https://github.com/achen5671'><FiGithub className='icon'/></a></li>
+            <li><a href='https://www.linkedin.com/in/achen5671/'><RiLinkedinLine className='icon'/></a></li>
+            <li><a href='https://discordapp.com/users/AC#3933'><RiDiscordLine className='icon' /></a></li>
+            <li><a href='https://www.instagram.com/andy__c.01/'><RiInstagramLine className='icon'/></a></li>
+            <li><a href='https://open.spotify.com/user/k3sg4oedmi6gyoo1jg177e3a3'><RiSpotifyLine className='icon'/></a></li>
           </ul>
-        </div>
+        </div>: ''}
       </header>
 
       <section id='about-me'>
