@@ -5,8 +5,25 @@ import './App.css';
 // TODO: Choose the right fonts
 import { FiGithub } from 'react-icons/fi';
 import {RiLinkedinLine, RiDiscordLine, RiInstagramLine, RiSpotifyLine} from 'react-icons/ri'
+import { useLayoutEffect, useState } from 'react';
 
 function App() {
+  const [dimensions, setDimensions] = useState({
+    height: window.innerHeight,
+    width: window.innerWidth
+  })
+
+  useLayoutEffect(() => {
+    function handleResize() {
+      setDimensions({
+        height: window.innerHeight,
+        width: window.innerWidth
+      })
+
+    }
+    window.addEventListener('resize', handleResize)
+  })
+
   return (
     <div className="App">
       {/* TODO: Rename class name */}
@@ -16,7 +33,7 @@ function App() {
           <p className='desc'>Full Stack Developer & UI / UX Designer</p>
         </div>
 
-        <div className='medias'>
+        {dimensions.width >= 900 ? <div className='medias'>
           <ul className='media-list'>
             <li><FiGithub/></li>
             <li><RiLinkedinLine/></li>
@@ -24,7 +41,7 @@ function App() {
             <li><RiInstagramLine/></li>
             <li><RiSpotifyLine/></li>
           </ul>
-        </div>
+        </div>: ''}
       </header>
     </div>
   );
