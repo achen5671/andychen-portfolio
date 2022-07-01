@@ -35,11 +35,11 @@ function App() {
 
         {dimensions.width >= 900 ? <div className='medias'>
           <ul className='media-list'>
-            <li><FiGithub/></li>
-            <li><RiLinkedinLine/></li>
-            <li><RiDiscordLine/></li>
-            <li><RiInstagramLine/></li>
-            <li><RiSpotifyLine/></li>
+            <li><a href='https://github.com/achen5671'><FiGithub className='icon'/></a></li>
+            <li><a href='https://www.linkedin.com/in/achen5671/'><RiLinkedinLine className='icon'/></a></li>
+            <li><a href='https://discordapp.com/users/AC#3933'><RiDiscordLine className='icon' /></a></li>
+            <li><a href='https://www.instagram.com/andy__c.01/'><RiInstagramLine className='icon'/></a></li>
+            <li><a href='https://open.spotify.com/user/k3sg4oedmi6gyoo1jg177e3a3'><RiSpotifyLine className='icon'/></a></li>
           </ul>
         </div>: ''}
       </header>

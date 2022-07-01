@@ -7,13 +7,6 @@
   text-align: center;
 }
 
-/* Look into @media */
-/* @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-} */
-
 /* Header */
 .App-header {
   background-color: #ffffff;
@@ -79,6 +72,27 @@ li {
   color: #000000;
   margin: 0;
   animation: slide-in 3s
+}
+
+@keyframes spin-icon{
+  100%{
+    transform:rotate(360deg);
+  }
+}
+
+.icon:hover {
+  background-color: black;
+  color: white;
+  animation: spin-icon 0.5s linear;
+
+  padding: 2px;
+  border-radius: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+
 }
 
 /* Header End */
