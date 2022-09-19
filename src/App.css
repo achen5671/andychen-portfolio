@@ -170,14 +170,3 @@ li {
 }
 
 /* About me End */
-
-/* Skills */
-.skills_icon {
-  width: 60px;
-  height: 60px;
-}
-
-.icon_name {
-  font-family: 'Inter';
-  font-style: normal;
-}
