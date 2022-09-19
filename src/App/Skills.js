@@ -31,11 +31,11 @@ export default function Skills() {
               </Col>
               <Col>
                 <h3>Language</h3>
-                <SkillBar name="HTML/CSS" width="100%" />
-                <SkillBar name="Javascript" width="100%" />
-                <SkillBar name="Typescript" width="100%" />
-                <SkillBar name="PosgresSQL" width="100%" />
-                <SkillBar name="Python" width="100%" />
+                <SkillBar name="HTML/CSS" width="90%" />
+                <SkillBar name="Javascript" width="80%" />
+                <SkillBar name="Typescript" width="20%" />
+                <SkillBar name="PosgresSQL" width="80%" />
+                <SkillBar name="Python" width="80%" />
                 <SkillBar name="Ruby" width="20%" />
               </Col>
               <Col>
