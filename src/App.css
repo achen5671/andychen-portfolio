@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
 /* TODO: Require changes to adapt to mobile view */
-
+/* Centers everything */
 .App {
   text-align: center;
 }
@@ -101,6 +101,7 @@ li {
 /* Header End */
 
 /* About me */
+/* TODO: Use styled components */
 /* TODO: Increase height to take up whole screen */
 #about-me {
   height: 80vh;
@@ -156,8 +157,6 @@ li {
 .animateAboutMe {
   animation: animate-about-me 3s;
   animation-fill-mode: forwards;
-
-
 }
 
 /* TODO: animate slide on scroll and base on where you are on the page. */

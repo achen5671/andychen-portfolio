@@ -1,6 +1,9 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+// App Components
+import Skills from './App/Skills';
+
 // We are using react-icons, is fontawesome a better alternative?
 // These icons are not the same as the one in the design
 // TODO: Choose the right fonts
@@ -10,12 +13,9 @@ import {RiLinkedinLine, RiDiscordLine, RiInstagramLine, RiSpotifyLine} from 'rea
 import { useInView } from 'react-intersection-observer';
 import { useLayoutEffect, useState } from 'react';
 
-import Skills from './Skills';
-
-
 function App() {
   // Track window / dimension changes
-  //    This is used to hide components when screen gets too small
+  //    Used to hide components when screen gets too small
   const [dimensions, setDimensions] = useState({
     height: window.innerHeight,
     width: window.innerWidth
@@ -64,7 +64,6 @@ function App() {
       </section>
 
       <Skills />
-
     </div>
   );
 }
