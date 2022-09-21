@@ -10,7 +10,6 @@ export default function Skills() {
   // Handles animation depending on scroll position, using react-intersection-oberser
   //  See Doc: https://github.com/thebuilder/react-intersection-observer#readme
   const { ref: myRef, inView: myElementIsVisible } = useInView();
-
   return (
     <div>
       <section>
@@ -20,7 +19,7 @@ export default function Skills() {
           </span>
         </h1>
 
-        {myElementIsVisible && (
+        {true && (
           <Container>
             {/* TODO: Map with object entries */}
             {/* Languages */}
