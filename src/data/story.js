@@ -1,8 +1,9 @@
 // Change image to images ?
+// Rename file to storyData
 const data = [
     {
         title: "America On Tech",
-        text: "Started my CS Journey. Joined a non-profit organization that was known as New York on Tech before they rebrand to America On Tech. Here I got introduced to the basics of Web DOM and entered competitions y creating real world portfolios",
+        text: "Started my CS Journey by joining a non-profit organization that whos goal is to ready next generation technology leaders. Revcivied variety of mentoryship and real world experience by developing and presenting web applications",
         date: "2018-2019",
         image: "../../images/aot.jpeg",
         category: {
@@ -12,8 +13,8 @@ const data = [
     },
     {
         title: "Gallery Media Group",
-        text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        date: "2019",
+        text: "First non tech Internship with Gallery media group by developing it's first interactive mobile protype of it's main website (https://www.gallerymediagroup.com/)",
+        date: "SUMMER 2019",
         image: "../../images/gmg_intern_team.jpeg",
         category: {
             tag: "",
@@ -21,8 +22,8 @@ const data = [
         }
     },
     {
-        title: "Stake",
-        text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        title: "Stakes",
+        text: "Worked with actual user community to allow user to make casual sports prediction while earnign real world prizes such as cash",
         date: "2019-2021",
         image: "../../images/stakes-founding.jpeg",
         category: {
@@ -31,8 +32,8 @@ const data = [
         }
     },
     {
-        title: "Stake",
-        text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        title: "Stakes",
+        text: "Stakes software internship that help develop and scale application got user community",
         date: "2021-present",
         image: "../../images/stakes-seed-team.jpeg",
         category: {
