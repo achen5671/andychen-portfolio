@@ -3,8 +3,9 @@
 const data = [
     {
         title: "America On Tech",
-        text: "Started my CS Journey by joining a non-profit organization that whos goal is to ready next generation technology leaders. Revcivied variety of mentoryship and real world experience by developing and presenting web applications",
+        text: "Learned the basics of Web Development, UX Design, and many more. Here I experienced real world work culture by visiting and networking with different companys such as NBC Universal, Bank of NY Melon, etc while developing and picking up new soft skills.",
         date: "2018-2019",
+        position: "",
         image: "../../images/aot.jpeg",
         category: {
             tag: "",
@@ -13,8 +14,9 @@ const data = [
     },
     {
         title: "Gallery Media Group",
-        text: "First non tech Internship with Gallery media group by developing it's first interactive mobile protype of it's main website (https://www.gallerymediagroup.com/)",
+        text: "Experienced my first technical internship by developing the first mobile protype of the Gallery Media Group webiste using React Native.",
         date: "SUMMER 2019",
+        position: "Frontend",
         image: "../../images/gmg_intern_team.jpeg",
         category: {
             tag: "",
@@ -23,8 +25,9 @@ const data = [
     },
     {
         title: "Stakes",
-        text: "Worked with actual user community to allow user to make casual sports prediction while earnign real world prizes such as cash",
-        date: "2019-2021",
+        text: "At Stakes, I honed my soft skills and techinical thinking by working directly with the user community. Here, I improved on my communication and also developed my critical thinking by testing sofwares and maintaining software quality.",
+        date: "F2019 - S2021",
+        position: "Business Operations • QA Intern",
         image: "../../images/stakes-founding.jpeg",
         category: {
             tag: "",
@@ -33,8 +36,9 @@ const data = [
     },
     {
         title: "Stakes",
-        text: "Stakes software internship that help develop and scale application got user community",
-        date: "2021-present",
+        text: "My first Fullstack position. Helped raised $5.3 million in seed funding by unit and integration test, devised new operational processes, and developed API and database schemas",
+        date: "2021 - PRESENT",
+        position: "Fullstack Intern",
         image: "../../images/stakes-seed-team.jpeg",
         category: {
             tag: "",

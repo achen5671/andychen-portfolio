@@ -4,13 +4,17 @@ import styled from 'styled-components';
 
 // Story Item will take an entire section / page
 export default function StoryItem ({ item }) {
+    const { title, position, text, image, date} = item;
+
     return (
     <StorySection>
         <StoryContent>
-            <Title>{item.title}</Title>
-            <Text>{item.text}</Text>
+            <Text>{date}</Text>
+            <Title>{title}</Title>
+            <Text style={{ fontWeight:'bold'}}>{position}</Text>
+            <Text>{text}</Text>
         </StoryContent>
-        <StoryImage src={item.image} />
+        <StoryImage src={image} />
     </StorySection>
     )
 }
@@ -50,9 +54,15 @@ const StoryImage = styled.img`
 `
 
 const Title = styled.h3`
-
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 70px;
 `
 
 const Text = styled.p`
-    dis
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
 `
