@@ -5,18 +5,16 @@ import styled, { keyframes } from 'styled-components';
 // TODO: Add proptypes
 export default function SkillBar({ name, width }) {
   return (
-    <React.Fragment>
-      <Container>
-        <SkillBox>
-          <SkillTitle>{name}</SkillTitle>
-          <Bar>
-            <SkillPer width={width}>
-              <SkillToolTip>{width}</SkillToolTip>
-            </SkillPer>
-          </Bar>
-        </SkillBox>
-      </Container>
-    </React.Fragment>
+    <Container>
+      <SkillBox>
+        <SkillTitle>{name}</SkillTitle>
+        <Bar>
+          <SkillPer width={width}>
+            <SkillToolTip>{width}</SkillToolTip>
+          </SkillPer>
+        </Bar>
+      </SkillBox>
+    </Container>
   );
 }
 
@@ -58,8 +56,8 @@ const SkillPer = styled.span`
   width: ${(props) => props.width || 'auto'};
   border-radius: 6px;
   background: crimson;
-  /* background: #39e75f; */
   animation: ${progress} 1s ease-in-out forwards;
+  /* background: #39e75f; */
   opacity: 0;
 `;
 
@@ -87,3 +85,11 @@ const SkillToolTip = styled.span`
     transform: translateX(-50%) rotate(45deg);
   }
 `;
+
+// const SkillSection = styled(Container)`
+//   &:hover {
+//     ${SkillPer} {
+//       animation: ${progress} 1s ease-in-out forwards;
+//     }
+//   }
+// `

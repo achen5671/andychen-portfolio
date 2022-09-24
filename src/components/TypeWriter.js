@@ -2,9 +2,7 @@ import styled, { keyframes } from 'styled-components';
 
 export default function TypeWriter(props) {
   return (
-    <div>
       <Text>{props.text}</Text>
-    </div>
   );
 }
 
@@ -23,7 +21,8 @@ const blink = keyframes`
 `;
 
 const Text = styled.h3`
-  position: relative;
+  position: absolute;
+  z-index: 100;
   width: max-content;
   /* display: grid; */
   &::before,
@@ -33,8 +32,7 @@ const Text = styled.h3`
     right: 0;
     left: 0;
     bottom: 0;
-
-    position: absolute; //abolute to thje parent which is relative.
+    position: absolute; //absolute to the parent which is relative.
   }
 
   &::before {
@@ -57,7 +55,7 @@ const Text = styled.h3`
     // TODO: Stop blinking after it's done
     animation: ${animateTypeWriter} 1s ease forwards, ${blink} 500ms infinite;
 
-    // TODO: Make steps to length of the string.
+    // TODO: Make steps to length of the string. Use a var
     animation-timing-function: steps(4);
   }
 `;

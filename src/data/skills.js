@@ -1,4 +1,4 @@
-// TODO: Need better data structure
+// This is unused
 const SkillsDict = {
     tech: {
         languages: [
