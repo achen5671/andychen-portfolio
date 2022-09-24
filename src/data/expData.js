@@ -1,6 +1,4 @@
-// Change image to images ?
-// Rename file to storyData
-const data = [
+const expData = [
     {
         title: "America On Tech",
         text: "Learned the basics of Web Development, UX Design, and many more. Here I experienced real world work culture by visiting and networking with different companys such as NBC Universal, Bank of NY Melon, etc while developing and picking up new soft skills.",
@@ -16,7 +14,7 @@ const data = [
         title: "Gallery Media Group",
         text: "Experienced my first technical internship by developing the first mobile protype of the Gallery Media Group webiste using React Native.",
         date: "SUMMER 2019",
-        position: "Frontend",
+        position: "Backend Web Developer Intern",
         image: "../../images/gmg_intern_team.jpeg",
         category: {
             tag: "",
@@ -38,7 +36,7 @@ const data = [
         title: "Stakes",
         text: "My first Fullstack position. Helped raised $5.3 million in seed funding by unit and integration test, devised new operational processes, and developed API and database schemas",
         date: "2021 - PRESENT",
-        position: "Fullstack Intern",
+        position: "Full Stack Intern",
         image: "../../images/stakes-seed-team.jpeg",
         category: {
             tag: "",
@@ -47,4 +45,4 @@ const data = [
     },
 ]
 
-export default data
+export default expData;

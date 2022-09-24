@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import StoryItem from '../components/StoryItem';
-import data from '../data/story';
+import expData from '../data/expData';
 
 export default function Story()  {
-  return (data.length > 0 && (
+  return (expData.length > 0 && (
     <StoryContainer>
-      {data.map((item, idx) => (
+      {expData.map((item, idx) => (
         <StoryItem item={item} key={idx} />
       ))}
     </StoryContainer>
