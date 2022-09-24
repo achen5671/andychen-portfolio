@@ -12,6 +12,7 @@ import { FiGithub } from 'react-icons/fi';
 import { RiLinkedinLine, RiDiscordLine, RiInstagramLine, RiSpotifyLine } from 'react-icons/ri';
 
 import { useInView } from 'react-intersection-observer';
+import Footer from './App/Footer';
 
 function App() {
   // TODO: Track window / dimension changes
@@ -81,6 +82,8 @@ function App() {
 
       {/* My Story and experiences */}
       <Story />
+
+      <Footer />
     </div>
   );
 }

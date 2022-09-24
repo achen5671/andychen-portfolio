@@ -3,7 +3,7 @@ const expData = [
         title: "America On Tech",
         text: "Learned the basics of Web Development, UX Design, and many more. Here I experienced real world work culture by visiting and networking with different companys such as NBC Universal, Bank of NY Melon, etc while developing and picking up new soft skills.",
         date: "2018-2019",
-        position: "",
+        position: "Fellowship",
         image: "../../images/aot.jpeg",
         category: {
             tag: "",
