@@ -109,6 +109,10 @@ li {
   /* overflow: hidden; */
 }
 
+.this-is-me {
+  height: 60vh;
+}
+
 .about-me-title {
   position: absolute;
   width: 100%;

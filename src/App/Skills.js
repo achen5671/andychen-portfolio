@@ -26,7 +26,7 @@ export default function Skills() {
           <SkillBar name="HTML/CSS" width="90%" />
           <SkillBar name="Javascript" width="80%" />
           <SkillBar name="Typescript" width="80%" />
-          <SkillBar name="PosgresSQL" width="80%" />
+          <SkillBar name="PosgresSQL" width="70%" />
           <SkillBar name="Python" width="80%" />
         </Col>
         <Col>
@@ -60,7 +60,6 @@ export default function Skills() {
         <Col>
           <h3>Workflow</h3>
           <SkillBar name="Agile/Scrum" width="100%" />
-          <SkillBar name="Interpersonal" width="100%" />
         </Col>
         <Col>
           <h3>Tools</h3>

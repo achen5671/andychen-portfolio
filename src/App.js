@@ -12,6 +12,7 @@ import { FiGithub } from 'react-icons/fi';
 import { RiLinkedinLine, RiDiscordLine, RiInstagramLine, RiSpotifyLine } from 'react-icons/ri';
 
 import { useInView } from 'react-intersection-observer';
+import Footer from './App/Footer';
 
 function App() {
   // TODO: Track window / dimension changes
@@ -74,13 +75,22 @@ function App() {
         <p className="about-me-desc">
           Junior Engineer with a passion for design and manifesting ideas into reality!
         </p>
+
       </section>
+{/* 
+      <div className='this-is-me'>
+        <span>This is me!</span>
+        Why I dont need to do a ./public?
+        <img src='./images/pfp.jpeg' height={300}/>
+      </div> */}
 
       {/* My Team and Tech Skills with skill bar */}
       <Skills />
 
       {/* My Story and experiences */}
       <Story />
+
+      <Footer />
     </div>
   );
 }
