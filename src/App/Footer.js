@@ -4,6 +4,7 @@ import { RiLinkedinLine } from "react-icons/ri";
 import {HiOutlineMail} from "react-icons/hi";
 import { GrDocumentPdf } from "react-icons/gr";
 import styled from "styled-components"
+import React from 'react';
 
 export default function Footer() {
     return (
