@@ -42,7 +42,7 @@ const FooterContainer = styled(Container)`
 `
 
 const FooterTitle = styled.h3`
-    
+    //
 `
 
 const FooterBody = styled.ul`
