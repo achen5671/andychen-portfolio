@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { TbCopy } from 'react-icons/tb'
+
 const parse = require('html-react-parser');
 
 // Story Item will take an entire section / page
 export default function StoryItem ({ item }) {
-    const { title, position, text, image, date, detail: { tag }} = item;
+    const { title, position, text, image, date, detail: {tag, completion }} = item;
 
-    const [isDetailVisible, toggleDetail ] = useState(false)
+    const [isDetailVisible, toggleDetail] = useState(false);
+    const [projectDetails, updateProject] = useState('');
     return (
     <StorySection>
         <StoryContent>
@@ -14,15 +17,23 @@ export default function StoryItem ({ item }) {
             <Title>{title}</Title>
             <Text style={{ fontWeight:'bold'}}>{position}</Text>
             <Text>{text}</Text>
-            {tag != '' && <DetailButton onClick={() => {toggleDetail(!isDetailVisible)}}>Learn more</DetailButton>}
+            {completion.length != 0 && completion.map((proj, idx) => {
+              const {name, link } = proj;
+              return(
+                <div key={idx}>
+                  <span><TbCopy /></span>
+                  <DetailButton onClick={() => {updateProject(link); toggleDetail(!isDetailVisible)}}>{name}</DetailButton>
+                </div>
+              )
+            })}
         </StoryContent>
         <ImageContainer>
           <StoryImage src={image} />
           <ImageOverlay>
-            <span>This is my team</span>
+            <span>{tag}</span>
           </ImageOverlay>
         </ImageContainer>
-        {isDetailVisible && parse(tag)}
+        {isDetailVisible && projectDetails != '' && parse(projectDetails)}
     </StorySection>
     )
 }
@@ -117,11 +128,6 @@ const Text = styled.p`
 const DetailButton = styled.button`
   text-decoration: none;
   border: none;
-  /* background-color: #ffffff; */
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-self: flex-start;
-  margin-top: 20px;
+  background-color: #ffffff;
+  font-size: 15px;
 `
