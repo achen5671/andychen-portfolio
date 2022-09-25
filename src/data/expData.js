@@ -8,6 +8,10 @@ const expData = [
         category: {
             tag: "",
             color: "",
+        },
+        detail: {
+            tag: '<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="50%" height="700" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FXaDD57D2nVSYPrsv6J071cPb%2FSports4U%3Fnode-id%3D1%253A2%26scaling%3Dscale-down%26page-id%3D0%253A1%26starting-point-node-id%3D1%253A2" allowfullscreen></iframe>',
+            isVisible: false,
         }
     },
     {
@@ -19,6 +23,10 @@ const expData = [
         category: {
             tag: "",
             color: "",
+        },
+        detail: {
+            tag: '<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSUqCwuZYHHdqS5Yed4fQjFdX1QppSTScjxaWUPhbPOvIIWhtHZlCMjqp5wZ2fVJ5D09JER5wpZVV2-/embed?start=false&loop=true&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>',
+            isVisible: false,
         }
     },
     {
@@ -30,6 +38,10 @@ const expData = [
         category: {
             tag: "",
             color: "",
+        },
+        detail: {
+            tag: '',
+            isVisible: false,
         }
     },
     {
@@ -41,6 +53,10 @@ const expData = [
         category: {
             tag: "",
             color: "",
+        },
+        detail: {
+            tag: '',
+            isVisible: false,
         }
     },
 ]

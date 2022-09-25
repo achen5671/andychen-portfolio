@@ -1,5 +1,5 @@
 import { Container } from "react-bootstrap";
-import { FiGithub } from "react-icons/fi";
+import { FiGithub, FiPhone } from "react-icons/fi";
 import { RiLinkedinLine } from "react-icons/ri";
 import {HiOutlineMail} from "react-icons/hi";
 import { GrDocumentPdf } from "react-icons/gr";
@@ -20,15 +20,15 @@ export default function Footer() {
                 </Bodyli>
                 <Bodyli>
                     <RiLinkedinLine style={{display: 'inline-block', marginRight: '0.2em', fontSize: '1.2em'}} />
-                    <Anchor href="https://www.Bodylinkedin.com/in/achen5671/" target="_blank" rel="noopener noreferrer">in/achen5671</Anchor>
+                    <Anchor href="https://www.linkedin.com/in/achen5671/" target="_blank" rel="noopener noreferrer">in/achen5671</Anchor>
                 </Bodyli>
                 <Bodyli>
                     <GrDocumentPdf style={{display: 'inline-block', marginRight: '0.2em', fontSize: '1.2em'}} />
                     <Anchor href="" download target="_blank" rel="noopener noreferrer">pdf/resume</Anchor>
                 </Bodyli>
                 <Bodyli>
-                    {/* <GrDocumentPdf style={{display: 'inline-block', marginRight: '0.2em', fontSize: '1.2em'}} /> */}
-                    <Anchor href="" target="_blank" rel="noopener noreferrer">646.240.6258</Anchor>
+                    <FiPhone style={{display: 'inline-block', marginRight: '0.2em', fontSize: '1.2em'}} />
+                    <Anchor href="" target="_blank" rel="noopener noreferrer">+1 646.240.6258</Anchor>
                 </Bodyli>
             </FooterBody>
         </FooterContainer>

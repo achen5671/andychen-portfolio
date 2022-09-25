@@ -1,11 +1,12 @@
-import React from 'react';
-import { Row,Col } from 'react-bootstrap';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+const parse = require('html-react-parser');
 
 // Story Item will take an entire section / page
 export default function StoryItem ({ item }) {
-    const { title, position, text, image, date} = item;
+    const { title, position, text, image, date, detail: { tag }} = item;
 
+    const [isDetailVisible, toggleDetail ] = useState(false)
     return (
     <StorySection>
         <StoryContent>
@@ -13,8 +14,15 @@ export default function StoryItem ({ item }) {
             <Title>{title}</Title>
             <Text style={{ fontWeight:'bold'}}>{position}</Text>
             <Text>{text}</Text>
+            {tag != '' && <DetailButton onClick={() => {toggleDetail(!isDetailVisible)}}>Learn more</DetailButton>}
         </StoryContent>
-        <StoryImage src={image} />
+        <ImageContainer>
+          <StoryImage src={image} />
+          <ImageOverlay>
+            <span>This is my team</span>
+          </ImageOverlay>
+        </ImageContainer>
+        {isDetailVisible && parse(tag)}
     </StorySection>
     )
 }
@@ -45,12 +53,51 @@ const StorySection = styled.section`
   position: relative;
 `
 
+const ImageContainer = styled.div`
+  position: relative;
+`
+
 const StoryImage = styled.img`
-    height: 50%;
-    width: 50%;
-    align-items: flex-end;
-    margin-left: 50%;
-    /* min-height: 100vh; */
+  display: block;
+  height: 50%;
+  width: 50%;
+  align-items: flex-end;
+  margin-left: 50%;
+  /* min-height: 100vh; */
+`
+
+const ImageOverlay = styled.div`
+  position: absolute;
+  background: rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+  top: 0;
+  left: 0;
+  display: flex;
+  height: 100%;
+  width: 50%;
+  align-items: flex-end;
+  margin-left: 50%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.25s;
+  backdrop-filter: blur(5px);
+
+  &:hover {
+    opacity: 1;
+  }
+
+  /* hover > * child component */
+  &:hover > * {
+    transform: translateY(0);
+  }
+
+  /* target all child component */
+  >* {
+    transform: translateY(20px);
+    transition: transform 0.25s;
+  }
 `
 
 const Title = styled.h3`
@@ -65,4 +112,16 @@ const Text = styled.p`
   font-style: normal;
   font-weight: 500;
   font-size: 25px;
+`
+
+const DetailButton = styled.button`
+  text-decoration: none;
+  border: none;
+  /* background-color: #ffffff; */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-self: flex-start;
+  margin-top: 20px;
 `
