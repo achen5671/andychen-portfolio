@@ -26,7 +26,7 @@ const expData = [
     },
     {
         title: "Gallery Media Group",
-        text: "At 2019, I took part at my first internship. The team and I developed the first mobile protoype of the Gallery Media Group website using React Native. I got to experience the life in the industry while picking up key skills and experiencing an Agile environment",
+        text: "At 2019, I took part at my first internship. Our team developed the first mobile protoype of the Gallery Media Group website using React Native. I got to experience the life in the industry while picking up key skills and experiencing an Agile environment",
         date: "SUMMER 2019",
         position: "Backend Web Developer Intern",
         image: "https://achen5671.github.io/andychen-portfolio/images/gmg_intern_team.jpeg",
@@ -42,7 +42,7 @@ const expData = [
     },
     {
         title: "Stakes",
-        text: "I joined Stakes as an intern as one of the earliest member. I got a chance to develop my critical thinking by testing softwares and maintaining software quality. I was able to improve on my soft skills and learn the different aspects of technology while experiencing the life at a startup!",
+        text: "I joined Stakes as one of the earliest members. I got a chance to develop my critical thinking by testing softwares and maintaining software quality. I was able to improve on my soft skills and learn the different aspects of technology while experiencing the life at a startup!",
         date: "F2019 - S2021",
         position: "Business Operations • QA Intern",
         image: "https://achen5671.github.io/andychen-portfolio/images/stakes-founding.jpeg",
