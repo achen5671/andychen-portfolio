@@ -25,7 +25,7 @@ const expData = [
     },
     {
         title: "Gallery Media Group",
-        text: "Experienced my first technical internship by developing the first mobile protype of the Gallery Media Group webiste using React Native.",
+        text: "At 2019, I took part at my first internship. The team and I developed the first mobile protoype of the Gallery Media Group website using React Native. Here, I got to experience the life in the industry while picking up key skills and experienced an Agile environment",
         date: "SUMMER 2019",
         position: "Backend Web Developer Intern",
         image: "../../images/gmg_intern_team.jpeg",
@@ -41,7 +41,7 @@ const expData = [
     },
     {
         title: "Stakes",
-        text: "2019 I joined Stakes as an intern as one of the earliest memeber. I experienced and saw the team grow by helping CEO scout and high class team. I honed my soft skills and techinical thinking by working directly with the user community. Here, I improved on my communication and also developed my critical thinking by testing sofwares and maintaining software quality.",
+        text: "I joined Stakes as an intern at 2019 as one of the earliest member. I got a chance to develop my critical thinking by testing softwares and maintaining software quality. I got a chance to improve on my soft skills while experiencing the life at a startup!",
         date: "F2019 - S2021",
         position: "Business Operations • QA Intern",
         image: "../../images/stakes-founding.jpeg",
@@ -52,7 +52,11 @@ const expData = [
     },
     {
         title: "Stakes",
-        text: "My first Fullstack position. Helped raised $5.3 million in seed funding by unit and integration test, devised new operational processes, and developed API and database schemas",
+        text: "At 2021, I was able to explore a fullstack position while learning multiple stacks and picking up key skills in the industry. \
+            I was able to take part in developing an app that raised $5.3 million in seed funding by contributing to \
+            • Unit and integration test \
+            • Devising new operational processes for game producers \
+            • Developing API and database schemas",
         date: "2021 - PRESENT",
         position: "Full Stack Intern",
         image: "../../images/stakes-seed-team.jpeg",
