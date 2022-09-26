@@ -1,3 +1,4 @@
+// Use typescript
 const expData = [
     {
         title: "America On Tech",
