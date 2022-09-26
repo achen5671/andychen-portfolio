@@ -13,7 +13,7 @@ export default function Footer() {
             <FooterBody>
                 <Bodyli>
                     <HiOutlineMail style={{display: 'inline-block', marginRight: '0.2em', fontSize: '1.2em'}} />
-                    <Anchor href="andychen5671@gmail.com" target="_blank" rel="noopener noreferrer">Email</Anchor>
+                    <Anchor href="#" onClick={(e) => e.preventDefault()}>andychen5671@gmail.com</Anchor>
                 </Bodyli>
                 <Bodyli>
                     <FiGithub style={{display: 'inline-block', marginRight: '0.2em', fontSize: '1.2em'}} />
@@ -25,11 +25,11 @@ export default function Footer() {
                 </Bodyli>
                 <Bodyli>
                     <GrDocumentPdf style={{display: 'inline-block', marginRight: '0.2em', fontSize: '1.2em'}} />
-                    <Anchor href="" download target="_blank" rel="noopener noreferrer">pdf/resume</Anchor>
+                    <Anchor href="https://www.dropbox.com/s/02llyp80ivbfw41/Andy_Resume.pdf?dl=0" download target="_blank" rel="noopener noreferrer">pdf/resume</Anchor>
                 </Bodyli>
                 <Bodyli>
                     <FiPhone style={{display: 'inline-block', marginRight: '0.2em', fontSize: '1.2em'}} />
-                    <Anchor href="" target="_blank" rel="noopener noreferrer">+1 646.240.6258</Anchor>
+                    <Anchor href="" onClick={(e) => e.preventDefault()} target="_blank" rel="noopener noreferrer">+1 646.240.6258</Anchor>
                 </Bodyli>
             </FooterBody>
         </FooterContainer>
