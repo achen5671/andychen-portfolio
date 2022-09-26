@@ -31,6 +31,7 @@ export default function StoryItem ({ item }) {
     const [isDetailVisible, toggleDetail] = useState(false);
     const [projectDetails, updateProject] = useState('');
 
+    // Not working as intented yet
     const shouldRenderChild = useDelayUnmount(isDetailVisible, 500);
 
     return (
@@ -75,14 +76,15 @@ export default function StoryItem ({ item }) {
 }
 
 const StoryContent = styled.div`
-    min-height: 100vh;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    max-width: 50%;
-    z-index: 100;
+  min-height: 100vh;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  max-width: 50%;
+  z-index: 100;
+  padding: 25px;
 `
 
 const StorySection = styled.section`

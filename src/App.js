@@ -1,19 +1,18 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
+import { useInView } from 'react-intersection-observer';
 
 // App Components
 import Skills from './App/Skills';
 import Story from './App/Story';
+import Footer from './App/Footer';
 
 // We are using react-icons, is fontawesome a better alternative?
 // These icons are not the same as the one in the design
 // TODO: Choose the right fonts
 import { FiGithub } from 'react-icons/fi';
 import { RiLinkedinLine, RiDiscordLine, RiInstagramLine, RiSpotifyLine } from 'react-icons/ri';
-
-import { useInView } from 'react-intersection-observer';
-import Footer from './App/Footer';
 
 function App() {
   // TODO: Track window / dimension changes

@@ -1,10 +1,12 @@
+import React from 'react';
+import styled from "styled-components"
+
 import { Container } from "react-bootstrap";
+
 import { FiGithub, FiPhone } from "react-icons/fi";
 import { RiLinkedinLine } from "react-icons/ri";
 import {HiOutlineMail} from "react-icons/hi";
 import { GrDocumentPdf } from "react-icons/gr";
-import styled from "styled-components"
-import React from 'react';
 
 export default function Footer() {
     return (
@@ -25,7 +27,7 @@ export default function Footer() {
                 </Bodyli>
                 <Bodyli>
                     <GrDocumentPdf style={{display: 'inline-block', marginRight: '0.2em', fontSize: '1.2em'}} />
-                    <Anchor href="https://www.dropbox.com/s/02llyp80ivbfw41/Andy_Resume.pdf?dl=0" download target="_blank" rel="noopener noreferrer">pdf/resume</Anchor>
+                    <Anchor href="https://www.dropbox.com/s/b7iabbc012x3bxo/Andy_Resume.pdf?dl=0" download target="_blank" rel="noopener noreferrer">pdf/resume</Anchor>
                 </Bodyli>
                 <Bodyli>
                     <FiPhone style={{display: 'inline-block', marginRight: '0.2em', fontSize: '1.2em'}} />

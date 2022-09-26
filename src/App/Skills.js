@@ -1,20 +1,21 @@
 import '../App.css';
 import React from 'react';
+import { useInView } from 'react-intersection-observer';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { useInView } from 'react-intersection-observer';
+
 import SkillBar from '../components/SkillBar';
 
 export default function Skills() {
   // Handles animation depending on scroll position, using react-intersection-oberser
   //  See Doc: https://github.com/thebuilder/react-intersection-observer#readme
-  // This rough lol. Needs refactor. Too many statements
+  // This rough lol. Needs refactor. Too many statements. Maybe not? use InView component ?
   // Work around to animate each SkillBar when it's on screen
   const { ref: skillOneRef, inView: mySkillOneIsVisible } = useInView();
-  const { ref: skillTwoRef, inView: mySkillTwoIsVisibleTwo } = useInView();
-  const { ref: skillThreeRef, inView: mySkillThreeIsVisibleTwo } = useInView();
+  const { ref: skillTwoRef, inView: mySkillTwoIsVisible } = useInView();
+  const { ref: skillThreeRef, inView: mySkillThreeIsVisible } = useInView();
 
   return (
     // TODO: Animate on HOVER. Probably need a hook
@@ -45,7 +46,7 @@ export default function Skills() {
       </div>
 
       <div ref={skillTwoRef}>
-        {mySkillTwoIsVisibleTwo &&
+        {mySkillTwoIsVisible &&
         <Row>
           {/* First col is for spacing */}
           {/* I think using flex display here might be better */}
@@ -66,7 +67,7 @@ export default function Skills() {
 
       {/* Team */}
       <div ref={skillThreeRef}>
-        {mySkillThreeIsVisibleTwo &&
+        {mySkillThreeIsVisible &&
         <Row>
           <Col>
             <h1>TEAM</h1>
