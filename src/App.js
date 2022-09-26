@@ -23,6 +23,9 @@ function App() {
   // Handles animation depending on scroll position, using react-intersection-oberser
   //  See Doc: https://github.com/thebuilder/react-intersection-observer#readme
   const { ref: myRef, inView: myElementIsVisible } = useInView();
+  // This is a terrible name. TODO: Rename. This is for "what next?!" section
+  const { ref: endRef, inView: myEndIsVisible } = useInView();
+
 
   return (
     <div className="App">
@@ -31,7 +34,8 @@ function App() {
       <header className="App-header">
         <div className="hide_overflow">
           <h3 className="name">Andy Chen</h3>
-          <p className="desc">Full Stack Developer & UI / UX Designer</p>
+          {/* <p className="desc">Full Stack Developer & UI / UX Designer</p> */}
+          <p className="desc">Exploring Full Stack & UI / UX Design</p>
         </div>
 
         <div className="medias">
@@ -74,22 +78,37 @@ function App() {
           </span>
         </h1>
         <p className="about-me-desc">
-          Junior Engineer with a passion for design and manifesting ideas into reality!
+          Junior Developer with a passion for design and manifesting ideas into reality!
         </p>
 
       </section>
-{/* 
+
+      {/* Inconstruction */}
+      {/*
       <div className='this-is-me'>
         <span>This is me!</span>
         Why I dont need to do a ./public?
         <img src='./images/pfp.jpeg' height={300}/>
-      </div> */}
+      </div>
+      */}
 
       {/* My Team and Tech Skills with skill bar */}
       <Skills />
 
       {/* My Story and experiences */}
       <Story />
+
+      {/* This is not an about me. TODO: change tag name to a generic name*/}
+      <section id="about-me">
+        <h1 ref={endRef} className="about-me-title">
+          <span className={`about-me-text ${myEndIsVisible ? 'animateAboutMe' : ''}`}>
+            What's next?
+          </span>
+        </h1>
+        <p className="about-me-desc">
+          Eagered to learn and pick up new skills!
+        </p>
+      </section>
 
       <Footer />
     </div>

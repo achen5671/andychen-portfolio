@@ -173,3 +173,11 @@ li {
 }
 
 /* About me End */
+
+
+.next {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
