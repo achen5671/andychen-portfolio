@@ -12,16 +12,16 @@ export default function Skills() {
   //  See Doc: https://github.com/thebuilder/react-intersection-observer#readme
   // This rough lol. Needs refactor. Too many statements
   // Work around to animate each SkillBar when it's on screen
-  const { ref: skillRef, inView: mySkillOneIsVisible } = useInView();
+  const { ref: skillOneRef, inView: mySkillOneIsVisible } = useInView();
   const { ref: skillTwoRef, inView: mySkillTwoIsVisibleTwo } = useInView();
   const { ref: skillThreeRef, inView: mySkillThreeIsVisibleTwo } = useInView();
 
   return (
     // TODO: Animate on HOVER. Probably need a hook
     <Container>
-      {/* TODO: Map with object entries */}
+      {/* TODO: Map with object entries. ise skill.js dict */}
       {/* Languages */}
-      <div ref={skillRef}>
+      <div ref={skillOneRef}>
         {mySkillOneIsVisible &&
         <Row>
           <Col>
@@ -45,8 +45,10 @@ export default function Skills() {
       </div>
 
       <div ref={skillTwoRef}>
-        {mySkillTwoIsVisibleTwo && <Row>
+        {mySkillTwoIsVisibleTwo &&
+        <Row>
           {/* First col is for spacing */}
+          {/* I think using flex display here might be better */}
           <Col></Col>
           <Col>
             <h3>Dev Tools</h3>
@@ -64,7 +66,8 @@ export default function Skills() {
 
       {/* Team */}
       <div ref={skillThreeRef}>
-        {mySkillThreeIsVisibleTwo && <Row>
+        {mySkillThreeIsVisibleTwo &&
+        <Row>
           <Col>
             <h1>TEAM</h1>
             <h6>Teamwork skills and tools</h6>

@@ -4,7 +4,7 @@ const expData = [
         text: "Learned the basics of Web Development, UX Design, and many more. Here I experienced real world work culture by visiting and networking with different companys such as NBC Universal, Bank of NY Melon, etc while developing and picking up new soft skills.",
         date: "2018-2019",
         position: "Fellowship",
-        image: "../../images/aot.jpeg",
+        image: "https://achen5671.github.io/andychen-portfolio/images/aot.jpeg",
         detail: {
             tag: 'America On Tech',
             completion: [
@@ -28,7 +28,7 @@ const expData = [
         text: "At 2019, I took part at my first internship. The team and I developed the first mobile protoype of the Gallery Media Group website using React Native. Here, I got to experience the life in the industry while picking up key skills and experienced an Agile environment",
         date: "SUMMER 2019",
         position: "Backend Web Developer Intern",
-        image: "../../images/gmg_intern_team.jpeg",
+        image: "https://achen5671.github.io/andychen-portfolio/images/gmg_intern_team.jpeg",
         detail: {
             tag: 'Gallery Media Group team!',
             completion: [
@@ -44,7 +44,7 @@ const expData = [
         text: "I joined Stakes as an intern at 2019 as one of the earliest member. I got a chance to develop my critical thinking by testing softwares and maintaining software quality. I got a chance to improve on my soft skills while experiencing the life at a startup!",
         date: "F2019 - S2021",
         position: "Business Operations • QA Intern",
-        image: "../../images/stakes-founding.jpeg",
+        image: "https://achen5671.github.io/andychen-portfolio/images/stakes-founding.jpeg",
         detail: {
             tag: 'Stakes Team 2021',
             completion: [],
@@ -59,7 +59,7 @@ const expData = [
             • Developing API and database schemas",
         date: "2021 - PRESENT",
         position: "Full Stack Intern",
-        image: "../../images/stakes-seed-team.jpeg",
+        image: "https://achen5671.github.io/andychen-portfolio/images/stakes-seed-team.jpeg",
         detail: {
             tag: 'Stakes Team 2022',
             completion: [

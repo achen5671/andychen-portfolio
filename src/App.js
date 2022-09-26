@@ -27,6 +27,7 @@ function App() {
   const { ref: endRef, inView: myEndIsVisible } = useInView();
 
 
+  // not compatible with iphone. TODO: FIX
   return (
     <div className="App">
       {/* Header */}
@@ -93,6 +94,7 @@ function App() {
       */}
 
       {/* My Team and Tech Skills with skill bar */}
+      {/* Werid bug where screen snaps up when you scroll from bottom to top */}
       <Skills />
 
       {/* My Story and experiences */}
