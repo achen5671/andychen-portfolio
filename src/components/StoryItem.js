@@ -1,12 +1,38 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import React, { useEffect, useState } from 'react';
+import styled, { css, keyframes } from 'styled-components';
+import { TbCopy } from 'react-icons/tb'
+
 const parse = require('html-react-parser');
+
+// TODO: Start using typescript
+function useDelayUnmount(isMounted, delayTime) {
+  const [ shouldRender, setShouldRender ] = useState(false);
+
+  useEffect(() => {
+      let timeoutId;
+      if (isMounted && !shouldRender) {
+          setShouldRender(true);
+      }
+      else if(!isMounted && shouldRender) {
+          timeoutId = setTimeout(
+              () => setShouldRender(false),
+              delayTime
+          );
+      }
+      return () => clearTimeout(timeoutId);
+  }, [isMounted, delayTime, shouldRender]);
+  return shouldRender;
+}
 
 // Story Item will take an entire section / page
 export default function StoryItem ({ item }) {
-    const { title, position, text, image, date, detail: { tag }} = item;
+    const { title, position, text, image, date, detail: {tag, completion }} = item;
 
-    const [isDetailVisible, toggleDetail ] = useState(false)
+    const [isDetailVisible, toggleDetail] = useState(false);
+    const [projectDetails, updateProject] = useState('');
+
+    const shouldRenderChild = useDelayUnmount(isDetailVisible, 500);
+
     return (
     <StorySection>
         <StoryContent>
@@ -14,15 +40,36 @@ export default function StoryItem ({ item }) {
             <Title>{title}</Title>
             <Text style={{ fontWeight:'bold'}}>{position}</Text>
             <Text>{text}</Text>
-            {tag != '' && <DetailButton onClick={() => {toggleDetail(!isDetailVisible)}}>Learn more</DetailButton>}
+            {completion.length != 0 && completion.map((proj, idx) => {
+              const {name, link } = proj;
+              return(
+                <div key={idx}>
+                  <span><TbCopy /></span>
+                  {/* This is terrible. TODO: Move to a function */}
+                  <DetailButton onClick={() => {
+                    if(name === 'News') return window.open(link, '_blank', 'resizable=yes')
+                    updateProject(link);
+                    toggleDetail(!isDetailVisible);
+                  }}>{name}</DetailButton>
+                </div>
+              )
+            })}
         </StoryContent>
-        <ImageContainer>
+        {!isDetailVisible && <ImageContainer>
           <StoryImage src={image} />
           <ImageOverlay>
-            <span>This is my team</span>
+            <span>{tag}</span>
           </ImageOverlay>
-        </ImageContainer>
-        {isDetailVisible && parse(tag)}
+        </ImageContainer>}
+
+        {/* Should use mount and unmount */}
+        {/* See: https://stackoverflow.com/questions/40064249/react-animate-mount-and-unmount-of-a-single-component
+            Animate on mount and unmount */}
+        {shouldRenderChild &&
+        <DetailInfo>
+          {projectDetails !== 'News' ? parse(projectDetails) : window.open(projectDetails, '_blank', 'resizable=yes')}
+        </DetailInfo>}
+
     </StorySection>
     )
 }
@@ -35,15 +82,12 @@ const StoryContent = styled.div`
     justify-content: flex-start;
     align-items: flex-start;
     max-width: 50%;
+    z-index: 100;
 `
+
 const StorySection = styled.section`
   background-color: #ffffff;
   min-height: 100vh;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center; */
   font-size: calc(10px + 2vmin);
   color: black;
   display: flex;
@@ -64,6 +108,27 @@ const StoryImage = styled.img`
   align-items: flex-end;
   margin-left: 50%;
   /* min-height: 100vh; */
+`
+
+// Can you mount, then call animation?
+const renderDetails = keyframes`
+  from {
+    transform: translateX(500px);;
+  }
+  to{
+    transform: translateX(0px);;
+  }
+`
+
+const DetailInfo = styled.div`
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 50%;
+  align-items: flex-start;
+  animation: ${renderDetails} 2s ease forwards;
 `
 
 const ImageOverlay = styled.div`
@@ -94,7 +159,7 @@ const ImageOverlay = styled.div`
   }
 
   /* target all child component */
-  >* {
+  > * {
     transform: translateY(20px);
     transition: transform 0.25s;
   }
@@ -117,11 +182,6 @@ const Text = styled.p`
 const DetailButton = styled.button`
   text-decoration: none;
   border: none;
-  /* background-color: #ffffff; */
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-self: flex-start;
-  margin-top: 20px;
+  background-color: #ffffff;
+  font-size: 15px;
 `
