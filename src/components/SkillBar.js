@@ -1,15 +1,21 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import styled, { keyframes } from 'styled-components';
+import { useInView } from 'react-intersection-observer';
+import { isVisible } from '@testing-library/user-event/dist/utils';
 
 // TODO: Add proptypes
 export default function SkillBar({ name, width }) {
+    // Handles animation depending on scroll position, using react-intersection-oberser
+  //  See Doc: https://github.com/thebuilder/react-intersection-observer#readme
+  const { ref: skillRef, inView: mySkillIsVisible } = useInView();
+
   return (
     <Container>
-      <SkillBox>
+      <SkillBox ref={skillRef}>
         <SkillTitle>{name}</SkillTitle>
         <Bar>
-          <SkillPer width={width}>
+          <SkillPer isVisible={mySkillIsVisible} width={width}>
             <SkillToolTip>{width}</SkillToolTip>
           </SkillPer>
         </Bar>
@@ -56,7 +62,7 @@ const SkillPer = styled.span`
   width: ${(props) => props.width || 'auto'};
   border-radius: 6px;
   background: crimson;
-  animation: ${progress} 1s ease-in-out forwards;
+  animation: ${(props) => props.isVisible && progress} 1s ease-in-out forwards;
   /* background: #39e75f; */
   opacity: 0;
 `;

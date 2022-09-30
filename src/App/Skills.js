@@ -18,12 +18,12 @@ export default function Skills() {
   const { ref: skillThreeRef, inView: mySkillThreeIsVisible } = useInView();
 
   return (
-    // TODO: Animate on HOVER. Probably need a hook
-    <Container>
-      {/* TODO: Map with object entries. ise skill.js dict */}
-      {/* Languages */}
-      <div ref={skillOneRef}>
-        {mySkillOneIsVisible &&
+    <>
+      {/* // TODO: Animate on HOVER. Probably need a hook */}
+      <Container>
+        {/* TODO: Map with object entries. e.g skill.js dict */}
+        {/* TODO: Load one? */}
+        {/* Languages */}
         <Row>
           <Col>
             <h1>TECH</h1>
@@ -42,11 +42,8 @@ export default function Skills() {
             <SkillBar name="ReactJS" width="90%" />
             <SkillBar name="NodeJS" width="80%" />
           </Col>
-        </Row>}
-      </div>
+        </Row>
 
-      <div ref={skillTwoRef}>
-        {mySkillTwoIsVisible &&
         <Row>
           {/* First col is for spacing */}
           {/* I think using flex display here might be better */}
@@ -60,14 +57,9 @@ export default function Skills() {
             <h3>Tools</h3>
             <SkillBar name="Visual Studio Code" width="100%" />
           </Col>
-        </Row>}
-      </div>
+        </Row>
 
-      <hr />
-
-      {/* Team */}
-      <div ref={skillThreeRef}>
-        {mySkillThreeIsVisible &&
+        {/* Team */}
         <Row>
           <Col>
             <h1>TEAM</h1>
@@ -82,8 +74,8 @@ export default function Skills() {
             <SkillBar name="Git/Github" width="100%" />
             <SkillBar name="Trello/Shortcut.com" width="100%" />
           </Col>
-        </Row>}
-      </div>
-    </Container>
+        </Row>
+      </Container>
+    </>
   );
 }

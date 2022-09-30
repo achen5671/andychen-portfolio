@@ -27,7 +27,7 @@ export default function Footer() {
                 </Bodyli>
                 <Bodyli>
                     <GrDocumentPdf style={{display: 'inline-block', marginRight: '0.2em', fontSize: '1.2em'}} />
-                    <Anchor href="https://www.dropbox.com/s/b7iabbc012x3bxo/Andy_Resume.pdf?dl=0" download target="_blank" rel="noopener noreferrer">pdf/resume</Anchor>
+                    <Anchor href="https://www.dropbox.com/s/x5qnbyyz57rmssk/Andy_Resume.pdf?dl=0" download target="_blank" rel="noopener noreferrer">pdf/resume</Anchor>
                 </Bodyli>
                 <Bodyli>
                     <FiPhone style={{display: 'inline-block', marginRight: '0.2em', fontSize: '1.2em'}} />
