@@ -13,6 +13,7 @@ import Footer from './App/Footer';
 // TODO: Choose the right fonts
 import { FiGithub } from 'react-icons/fi';
 import { RiLinkedinLine, RiDiscordLine, RiInstagramLine, RiSpotifyLine } from 'react-icons/ri';
+import { AiOutlineInfoCircle } from 'react-icons/ai';
 
 function App() {
   // TODO: Track window / dimension changes
@@ -36,9 +37,10 @@ function App() {
           <h3 className="name">Andy Chen</h3>
           {/* <p className="desc">Full Stack Developer & UI / UX Designer</p> */}
           <p className="desc">Exploring Full Stack & UI / UX Design</p>
+          {/* <p style={{ color: "gray", fontSize: '14px'}}>Based in NYC</p> */}
         </div>
 
-        <div className="medias">
+        <div className="medias d-md-block d-none">
           <ul className="media-list">
             <li>
               <a href="https://github.com/achen5671">
@@ -51,18 +53,8 @@ function App() {
               </a>
             </li>
             <li>
-              <a href="https://discordapp.com/users/AC#3933">
-                <RiDiscordLine className="media-icon" />
-              </a>
-            </li>
-            <li>
-              <a href="https://www.instagram.com/andy__c.01/">
-                <RiInstagramLine className="media-icon" />
-              </a>
-            </li>
-            <li>
-              <a href="https://open.spotify.com/user/k3sg4oedmi6gyoo1jg177e3a3">
-                <RiSpotifyLine className="media-icon" />
+              <a href="#contact">
+                <AiOutlineInfoCircle className="media-icon" />
               </a>
             </li>
           </ul>
@@ -80,7 +72,6 @@ function App() {
         <p className="about-me-desc">
           Junior Developer with a passion for design and manifesting ideas into reality!
         </p>
-
       </section>
 
       {/* Inconstruction */}
@@ -94,7 +85,7 @@ function App() {
 
       {/* My Team and Tech Skills with skill bar */}
       {/* Werid bug where screen snaps up when you scroll from bottom to top */}
-      <Skills />
+      {/* <Skills /> */}
 
       {/* My Story and experiences */}
       <Story />
@@ -110,8 +101,10 @@ function App() {
           Eagered to learn and pick up new skills!
         </p>
       </section>
-
-      <Footer />
+      
+      <section id="contact">
+        <Footer />
+      </section>
     </div>
   );
 }
