@@ -81,15 +81,16 @@ li {
 
 .media-icon {
   transition: background-color 0.5s ease;
+  color: none
 }
 
 .media-icon:hover {
-  background-color: black;
-  color: white;
-  animation: spin-icon 0.5s linear;
+  /* background-color: black; */
+  color: black;
+  /* animation: spin-icon 0.5s linear; */
 
-  padding: 2px;
-  border-radius: 100%;
+  /* padding: 2px; */
+  /* border-radius: 100%; */
 }
 
 .medias a {
@@ -135,12 +136,13 @@ li {
 .about-me-text {
   display: inline-block;
   z-index: 1;
+  font-size: 13vw;
 }
 
 .about-me-desc {
   /* Junior Engineer with a passion for design and manifesting ideas into reality ! */
-  width: 662px;
-  height: 88px;
+  /* width: 662px;
+  height: 88px; */
   margin-left: 30%;
   top: 379px;
 
@@ -154,6 +156,14 @@ li {
   letter-spacing: -0.017em;
 
   color: #000000;
+
+  @media only screen and (max-width: 850px) {
+    margin-left: 0;
+    justify-content: center;
+    font-size: 30px;
+    text-align: center;
+  }
+
 }
 
 /* TODO: This is going to be used my multiple component. Name of class WILL be changed */

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import { TbCopy } from 'react-icons/tb'
+import { getToolImage } from '../helper';
+import { Col, Image, Row } from 'react-bootstrap';
 
 const parse = require('html-react-parser');
 
@@ -26,14 +28,15 @@ function useDelayUnmount(isMounted, delayTime) {
 
 // Story Item will take an entire section / page
 export default function StoryItem ({ item }) {
-    const { title, position, text, image, date, detail: {tag, completion }} = item;
+    const { title, position, text, image, date, detail: {tag, completion }, tools} = item;
 
     const [isDetailVisible, toggleDetail] = useState(false);
     const [projectDetails, updateProject] = useState('');
 
-    // Not working as intented yet
+    // Not working as intended yet
     const shouldRenderChild = useDelayUnmount(isDetailVisible, 500);
 
+    
     return (
     <StorySection>
         <StoryContent>
@@ -41,22 +44,33 @@ export default function StoryItem ({ item }) {
             <Title>{title}</Title>
             <Text style={{ fontWeight:'bold'}}>{position}</Text>
             <Text>{text}</Text>
+
+            <Row>
+              {/* {console.log(tools)} */}
+              {(tools ?? []).map((tool, index) => (
+                <Col>
+                  <Image key={tool} src={getToolImage(tool)}/>
+                </Col>
+              ))}
+            </Row>
+
             {completion.length != 0 && completion.map((proj, idx) => {
-              const {name, link } = proj;
+              const {name, link, type } = proj;
               return(
                 <div key={idx}>
                   <span><TbCopy /></span>
                   {/* This is terrible. TODO: Move to a function */}
                   <DetailButton onClick={() => {
-                    if(name === 'News') return window.open(link, '_blank', 'resizable=yes')
-                    updateProject(link);
+                    if(type === 'link') return window.open(link, '_blank', 'resizable=yes')
+                    updateProject(proj);
                     toggleDetail(!isDetailVisible);
                   }}>{name}</DetailButton>
                 </div>
               )
             })}
         </StoryContent>
-        {!isDetailVisible && <ImageContainer>
+
+        {!isDetailVisible && <ImageContainer className='d-md-block d-none'>
           <StoryImage src={image} />
           <ImageOverlay>
             <span>{tag}</span>
@@ -68,7 +82,9 @@ export default function StoryItem ({ item }) {
             Animate on mount and unmount */}
         {shouldRenderChild &&
         <DetailInfo>
-          {projectDetails !== 'News' ? parse(projectDetails) : window.open(projectDetails, '_blank', 'resizable=yes')}
+          {projectDetails.type === 'link' && window.open(projectDetails, '_blank', 'resizable=yes')}
+          {projectDetails.type === 'image' && <StoryImage src={projectDetails.link} />}
+          {projectDetails.type === 'iframe' && parse(projectDetails.link)}
         </DetailInfo>}
 
     </StorySection>
