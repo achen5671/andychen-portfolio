@@ -49,7 +49,7 @@ export default function StoryItem ({ item }) {
               {/* {console.log(tools)} */}
               {(tools ?? []).map((tool, index) => (
                 <Col>
-                  <Image key={tool} src={getToolImage(tool)}/>
+                  <Image style={{ width: '50px' }} key={tool} src={getToolImage(tool)}/>
                 </Col>
               ))}
             </Row>
