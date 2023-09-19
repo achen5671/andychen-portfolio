@@ -1,28 +1,30 @@
 export const getToolImage = (type) => {
+
     switch (type) {
-        case type === 'html':
+        case 'html':
             return 'https://achen5671.github.io/andychen-portfolio/images/tools/html5.png';
-        case type === 'css':
+        case 'css':
             return 'https://achen5671.github.io/andychen-portfolio/images/admin-portal.png'
-        case type === 'js':
+        case 'js':
             return;
-        case type === 'ts':
+        case 'ts':
+            console.log('nice')
             return 'https://achen5671.github.io/andychen-portfolio/images/typescript.png'
-        case type === 'bootstrap':
+        case 'bootstrap':
             return;
-        case type === 'psql':
+        case 'psql':
+            return 'https://achen5671.github.io/andychen-portfolio/images/psql.svg';
+        case 'node':
             return;
-        case type === 'node':
+        case 'python':
             return;
-        case type === 'python':
+        case 'react':
             return;
-        case type === 'react':
-            return;
-        case type === 'android-studio':
+        case 'android-studio':
             return;        
-        case type === 'react-native':
+        case 'react-native':
             return;        
-        case type === 'jira':
+        case 'jira':
             return;     
         default:
             return '';   

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import { TbCopy } from 'react-icons/tb'
 import { getToolImage } from '../helper';
-import { Image } from 'react-bootstrap';
+import { Col, Image, Row } from 'react-bootstrap';
 
 const parse = require('html-react-parser');
 
@@ -45,12 +45,14 @@ export default function StoryItem ({ item }) {
             <Text style={{ fontWeight:'bold'}}>{position}</Text>
             <Text>{text}</Text>
 
-            <React.Fragment>
+            <Row>
               {/* {console.log(tools)} */}
-              {(tools ?? []).map((tool) => (
-                <Image src={getToolImage(tool)}/>
+              {(tools ?? []).map((tool, index) => (
+                <Col>
+                  <Image key={tool} src={getToolImage(tool)}/>
+                </Col>
               ))}
-            </React.Fragment>
+            </Row>
 
             {completion.length != 0 && completion.map((proj, idx) => {
               const {name, link, type } = proj;
