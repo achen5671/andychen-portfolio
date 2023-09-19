@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import { TbCopy } from 'react-icons/tb'
 import { getToolImage } from '../helper';
-import { Col, Image, Row } from 'react-bootstrap';
+import { Col, Container, Image, Row } from 'react-bootstrap';
 
 const parse = require('html-react-parser');
 
@@ -38,62 +38,64 @@ export default function StoryItem ({ item }) {
 
     
     return (
-    <StorySection>
-        <StoryContent>
-            <Text>{date}</Text>
-            <Title>{title}</Title>
-            <Text style={{ fontWeight:'bold'}}>{position}</Text>
-            <Text>{text}</Text>
+    <StoryContainer fluid>
+      <Row>
+        <Col>
+          <Text>{date}</Text>
+          <Title>{title}</Title>
+          <Text style={{ fontWeight:'bold'}}>{position}</Text>
+          <Text>{text}</Text>
 
-            <Row>
-              {/* {console.log(tools)} */}
-              {(tools ?? []).map((tool, index) => (
-                <Col>
-                  <Image style={{ width: '50px' }} key={tool} src={getToolImage(tool)}/>
-                </Col>
-              ))}
-            </Row>
+          <Row style={{ width: '75%', marginBottom: '20px'}}>
+            {(tools ?? []).map((tool, index) => (
+              <Col>
+                <Image style={{ width: '50px' }} key={tool} src={getToolImage(tool)}/>
+              </Col>
+            ))}
+          </Row>
 
-            {completion.length != 0 && completion.map((proj, idx) => {
-              const {name, link, type } = proj;
-              return(
-                <div key={idx}>
-                  <span><TbCopy /></span>
-                  {/* This is terrible. TODO: Move to a function */}
-                  <DetailButton onClick={() => {
-                    if(type === 'link') return window.open(link, '_blank', 'resizable=yes')
-                    updateProject(proj);
-                    toggleDetail(!isDetailVisible);
-                  }}>{name}</DetailButton>
-                </div>
-              )
-            })}
-        </StoryContent>
+          {completion.length != 0 && completion.map((proj, idx) => {
+            const {name, link, type } = proj;
+            return(
+              <div key={idx}>
+                <span><TbCopy /></span>
+                {/* This is terrible. TODO: Move to a function */}
+                <DetailButton onClick={() => {
+                  if(type === 'link') return window.open(link, '_blank', 'resizable=yes')
+                  updateProject(proj);
+                  toggleDetail(!isDetailVisible);
+                }}>{name}</DetailButton>
+              </div>
+            )
+          })}
+        </Col>
+        <Col>
 
-        {!isDetailVisible && <ImageContainer className='d-md-block d-none'>
-          <StoryImage src={image} />
-          <ImageOverlay>
-            <span>{tag}</span>
-          </ImageOverlay>
-        </ImageContainer>}
+          {!isDetailVisible && <ImageContainer>
+            <StoryImage src={image} />
+            <ImageOverlay>
+              <span>{tag}</span>
+            </ImageOverlay>
+          </ImageContainer>}
 
-        {/* Should use mount and unmount */}
-        {/* See: https://stackoverflow.com/questions/40064249/react-animate-mount-and-unmount-of-a-single-component
-            Animate on mount and unmount */}
-        {shouldRenderChild &&
-        <DetailInfo>
-          {projectDetails.type === 'link' && window.open(projectDetails, '_blank', 'resizable=yes')}
-          {projectDetails.type === 'image' && <StoryImage src={projectDetails.link} />}
-          {projectDetails.type === 'iframe' && parse(projectDetails.link)}
-        </DetailInfo>}
+          {/* Should use mount and unmount */}
+          {/* See: https://stackoverflow.com/questions/40064249/react-animate-mount-and-unmount-of-a-single-component
+              Animate on mount and unmount */}
+          {shouldRenderChild &&
+          <DetailInfo>
+            {projectDetails.type === 'link' && window.open(projectDetails, '_blank', 'resizable=yes')}
+            {projectDetails.type === 'image' && <StoryImage src={projectDetails.link} />}
+            {projectDetails.type === 'iframe' && parse(projectDetails.link)}
+          </DetailInfo>}
+        </Col>
+      </Row>
 
-    </StorySection>
+    </StoryContainer>
     )
 }
 
 const StoryContent = styled.div`
   min-height: 100vh;
-  position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -103,16 +105,17 @@ const StoryContent = styled.div`
   padding: 25px;
 `
 
-const StorySection = styled.section`
+const StoryContainer = styled(Container)`
   background-color: #ffffff;
   min-height: 100vh;
-  font-size: calc(10px + 2vmin);
+  padding: 70px;
+  /* font-size: calc(10px + 2vmin);
   color: black;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
   margin: 50px;
-  position: relative;
+  position: relative; */
 `
 
 const ImageContainer = styled.div`
@@ -120,11 +123,11 @@ const ImageContainer = styled.div`
 `
 
 const StoryImage = styled.img`
-  display: block;
-  height: 50%;
-  width: 50%;
-  align-items: flex-end;
-  margin-left: 50%;
+  /* display: block; */
+  height: 100%;
+  width: 100%;
+  /* align-items: flex-end; */
+  /* margin-left: 50%; */
   /* min-height: 100vh; */
 `
 
@@ -139,12 +142,11 @@ const renderDetails = keyframes`
 `
 
 const DetailInfo = styled.div`
-  position: absolute;
-  width: 50%;
+  /* position: absolute; */
+  width: 100%;
   height: 100%;
   display: flex;
   justify-content: flex-start;
-  margin-left: 50%;
   align-items: flex-start;
   animation: ${renderDetails} 2s ease forwards;
 `
@@ -157,9 +159,9 @@ const ImageOverlay = styled.div`
   left: 0;
   display: flex;
   height: 100%;
-  width: 50%;
+  width: 100%;
   align-items: flex-end;
-  margin-left: 50%;
+  /* margin-left: 50%; */
   flex-direction: column;
   justify-content: center;
   align-items: center;
