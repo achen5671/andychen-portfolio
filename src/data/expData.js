@@ -49,7 +49,7 @@ const expData = [
     },
     {
         title: "Gallery Media Group",
-        text: "Our team developed the first mobile prototype for the Gallery Media Group using React Native.",
+        text: "Our team developed the first mobile prototype for Gallery Media Group using React Native.",
         date: "SUMMER 2019",
         position: "Backend Web Developer Intern",
         image: "https://achen5671.github.io/andychen-portfolio/images/gmg_intern_team.jpeg",
@@ -68,7 +68,7 @@ const expData = [
     },
     {
         title: "America On Tech",
-        text: "At AOT, I learned the basics of Web Development, UX Design, and many more. I got to experience many work cultures by visiting and networking with different companies such as NBC Universal, Bank of NY Melon, Accenture, etc while developing and picking up new soft skills.",
+        text: "I learned the basics of Web Development, UX Design and experienced many work cultures by networking with companies such as NBC Universal, Bank of NY Melon, Accenture, etc.",
         date: "2018-2019",
         position: "Non-profit Fellowship",
         image: "https://achen5671.github.io/andychen-portfolio/images/aot.jpeg",
