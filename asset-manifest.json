@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/andychen-portfolio/static/css/main.87b5c12a.css",
-    "main.js": "/andychen-portfolio/static/js/main.6da506e1.js",
+    "main.js": "/andychen-portfolio/static/js/main.3b884808.js",
     "index.html": "/andychen-portfolio/index.html",
     "main.87b5c12a.css.map": "/andychen-portfolio/static/css/main.87b5c12a.css.map",
-    "main.6da506e1.js.map": "/andychen-portfolio/static/js/main.6da506e1.js.map"
+    "main.3b884808.js.map": "/andychen-portfolio/static/js/main.3b884808.js.map"
   },
   "entrypoints": [
     "static/css/main.87b5c12a.css",
-    "static/js/main.6da506e1.js"
+    "static/js/main.3b884808.js"
   ]
 }
