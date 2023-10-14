@@ -27,7 +27,7 @@ export default function Footer() {
                 </Bodyli>
                 <Bodyli>
                     <GrDocumentPdf style={{display: 'inline-block', marginRight: '0.2em', fontSize: '1.2em'}} />
-                    <Anchor href="https://www.dropbox.com/scl/fi/yqu52c6q7wb9lntp4birt/Andy-Resume.pdf?rlkey=8ekirfbgihudozjnd2mts71c2&dl=0" download target="_blank" rel="noopener noreferrer">pdf/resume</Anchor>
+                    <Anchor href="https://www.dropbox.com/scl/fi/o4pf4c890a8o7ur2c3beq/Andy_Chen_Resume.pdf?rlkey=a1lxntcwdmxm4xki5kvnqkmv6&dl=0" download target="_blank" rel="noopener noreferrer">pdf/resume</Anchor>
                 </Bodyli>
                 <Bodyli>
                     <FiPhone style={{display: 'inline-block', marginRight: '0.2em', fontSize: '1.2em'}} />
